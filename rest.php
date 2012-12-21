@@ -1,6 +1,6 @@
 <?php
 require_once ('curl.php');
-$cartItem = '"Cart":{"Item":[{"Skuid":"59804","IsAutoShip":"","Quantity":1,"Id":"90","productPack":[21244,21242,21244,22000,22001,22013,22030,22040,89293,76204,70701,70703]}]}';
+$cartItem = '"Cart":{"Item":[{"Skuid":"89283","IsAutoShip":"","Quantity":1,"Id":"90","productPack":[21244,21242,21244,22000,22001,22013,22030,22040,89293,76204,70701,70703]}]}';
 $config = array(
 	1 => array(
 		'apiName' => 'Get Category',
