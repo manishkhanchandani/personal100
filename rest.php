@@ -77,14 +77,14 @@ $config = array(
 		'apiName' => 'Get Customer Kit',
 		'url' => '/us/en/mobile_sponsor.php',
 		'method' => 'get',
-		'getvalues' => 'jointype=1&type=member',
+		'getvalues' => 'jointype=1&type=member&sk_mobile.shakleeid=ZH07717',
 		'postvalues' => ''
 	), 
 	array(
 		'apiName' => 'Get Business Kit',
 		'url' => '/us/en/mobile_sponsor.php',
 		'method' => 'get',
-		'getvalues' => 'jointype=1',
+		'getvalues' => 'jointype=1&sk_mobile.shakleeid=ZH07717',
 		'postvalues' => ''
 	), 
 	array(
