@@ -8,7 +8,12 @@
 <link rel="stylesheet" href="jquery.mobile/jquery.mobile.custom.theme.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="jquery.mobile/jquery.mobile.custom.js"></script>
-
+<script src="custom.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  get(Shaklee.url_translation, 'translation');
+});
+</script>
 </head> 
 <body> 
 
@@ -26,7 +31,7 @@
 		    <label for="password">Password Input:</label>
 		    <input type="password" name="password" id="password" value="manish321"  />
 	      </div>
-		  <a href="#page2" data-role="button">Login</a>
+		  <a href="#home" data-role="button">Login</a>
           
         	
         </form>	
@@ -36,7 +41,7 @@
 	</div>
 </div>
 
-<div data-role="page" id="page2">
+<div data-role="page" id="home">
 	<div data-role="header">
 		<h1>Menu</h1>
 	</div>
@@ -44,7 +49,7 @@
 	  <div class="ui-grid-a">
 	    <div class="ui-block-a"><strong>Enroll</strong></div>
 	    <div class="ui-block-b"><strong>Shop</strong></div>
-	    <div class="ui-block-a"><a href="#member">A Member</a></div>
+	    <div class="ui-block-a"><a href="#" onClick="doClick('member');">A Member</a></div>
 	    <div class="ui-block-b"><a href="#formyself">For Myself</a></div>
 	    <div class="ui-block-a"><a href="#business">A Business</a></div>
 	    <div class="ui-block-b"><a href="#formember">For Member</a></div>
@@ -57,13 +62,20 @@
 		<h4>Page Footer</h4>
 	</div>
 </div>
-
+<!--
+Join Member
+http://mobile.local.shaklee.com:8282/us/en/mobile_sponsor.php?jointype=1&type=member&sk_mobile.shakleeid=BQ50228
+-->
 <div data-role="page" id="member">
 	<div data-role="header">
-		<h1>member</h1>
+		<h1>Member</h1>
 	</div>
 	<div data-role="content">	
-		Content		
+		<div class="content-primary">
+			<ul id="member_content" data-role="listview">
+            	<li>Loading....</li>
+            </ul>
+        </div>	
 	</div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>
