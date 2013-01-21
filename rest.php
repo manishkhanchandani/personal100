@@ -4,7 +4,8 @@ $shakleeId = !empty($_GET['shakleeId']) ? $_GET['shakleeId'] : 'BQ50228'; //'BQ5
 $shipping = '"Shipping":{"name":"190 Marietta St NW","line1":"190 Marietta St NW","line2":"","city":"ATLANTA","state":"GA","county":"","zipcode":"30303","phone":"","province":"","zip":"30303","postalcode":"30303","state_id":"GA"}';
 $billing = '"Billing":{"name":"190 Marietta St NW","line1":"190 Marietta St NW","line2":"","city":"ATLANTA","state":"GA","county":"","zipcode":"30303","phone":"","province":"","zip":"30303","postalcode":"30303","state_id":"GA"}';
 //$cartItem = '"Cart":{"Item":[{"Skuid":"89283","IsAutoShip":"","Quantity":1,"Id":"90","productPack":[21244,21242,21244,22000,22001,22013,22030,22040,89293,76204,70701,70703]}]}';
-$cartItem = '"Cart":{"Item":[{"Skuid":"20653","IsAutoShip":"1","Quantity":1,"Id":"","productPack":[]}]}';
+//$cartItem = '"Cart":{"Item":[{"Skuid":"89280","IsAutoShip":"","Quantity":1,"Id":"","productPack":[]}]}';
+$cartItem = '"Cart":{"Item":[{"Skuid":"20340","IsAutoShip":"1","Quantity":1,"Id":"","productPack":[]}]}';
 $config = array(
 	1 => array(
 		'apiName' => 'Get Category',
@@ -162,14 +163,14 @@ $config = array(
 		'postvalues' => ''
 	),
 	array(
-		'apiName' => 'Add Items in Existing Autoship (in progress)',
+		'apiName' => 'Add Items in Existing Autoship',
 		'url' => '/us/en/mobile_autoship.php',
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&add=1&data={"autoshipid":"23", "items":[{"sku":"52115", "qty": "1", "freq": "30"},{"sku":"89222", "qty": "1", "freq": "60"}]}',
 		'postvalues' => ''
 	),
 	array(
-		'apiName' => 'Add Items in New Autoship (in progress)',
+		'apiName' => 'Add Items in New Autoship',
 		'url' => '/us/en/mobile_autoship.php',
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&list=1&data={"autoshipid":"23"}',
@@ -187,6 +188,34 @@ $config = array(
 		'url' => '/us/en/mobile_widget.php',
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&info=1&data={"sku":"89281"}',
+		'postvalues' => ''
+	),
+	array(
+		'apiName' => 'Widget ID',
+		'url' => '/us/en/mobile_widget.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&getid=1&data={"id":"92"}',
+		'postvalues' => ''
+	),
+	array(
+		'apiName' => 'FirstBorn',
+		'url' => '/us/en/mobile_api_questionnaire.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&default=1',
+		'postvalues' => ''
+	),
+	array(
+		'apiName' => 'FirstBorn Submit',
+		'url' => '/us/en/mobile_api_questionnaire.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&submit=1&data={"heart":"5"}',
+		'postvalues' => ''
+	),
+	array(
+		'apiName' => 'FirstBorn Test',
+		'url' => '/us/en/mobile_api_questionnaire.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&test=1',
 		'postvalues' => ''
 	),
     array(
@@ -276,7 +305,7 @@ body {
     <td valign="top"><form id="form1" name="form1" method="post" action="" onsubmit="chg(); return true;" target="_blank">
         <p>Url:
           <label for="url2"></label>
-          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com:8282" size="40" />
+          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com:83" size="40" />
         </p>
         <p>Path:
           <label for="path"></label>
