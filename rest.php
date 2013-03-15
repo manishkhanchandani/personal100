@@ -239,7 +239,14 @@ $config = array(
         'method' => 'get',
         'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&add=1&data={"name":"John Jones","line1":"1657 Riverside Drive","line2":"","city":"San Franc","state":"CA","zip":"96049-6073","phone":"530-225-3426","gift_flag":"1","verify_flag":"1"}',
         'postvalues' => ''
-    )
+    ),
+    array(
+		'apiName' => 'Business Account Info',
+		'url' => '/us/en/mobile_business_account.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid=XG06106&sk_mobile.api_version=1&default=1',
+		'postvalues' => ''
+	)
 );
 $currentPage = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
 $jsondata = json_encode($config);
