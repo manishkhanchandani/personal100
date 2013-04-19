@@ -249,6 +249,13 @@ $config = array(
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid=XG06106&sk_mobile.api_version=1&default=1',
 		'postvalues' => ''
+	),
+    array(
+		'apiName' => 'Eprize Winner List',
+		'url' => '/us/en/mobile_eprize.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=28/02/2013',
+		'postvalues' => ''
 	)
 );
 $currentPage = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
