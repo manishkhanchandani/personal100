@@ -257,6 +257,14 @@ $config = array(
 		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=28/02/2013',
 		'postvalues' => ''
 	)
+	,
+    array(
+        'apiName' => '180 Challenge Start Date',
+        'url' => '/us/en/mobile_start_elig_health_comp.php',
+        'method' => 'get',
+        'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1',
+        'postvalues' => ''
+    )
 );
 $currentPage = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
 $jsondata = json_encode($config);
