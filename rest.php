@@ -1,15 +1,12 @@
 <?php
 require_once ('curl.php');
 $shakleeId = !empty($_GET['shakleeId']) ? $_GET['shakleeId'] : 'BQ50228'; //'BQ50228';
-$shipping = '"Shipping":{"name":"190 Marietta St NW","line1":"190 Marietta St NW","line2":"","city":"ATLANTA","state":"GA","county":"","zipcode":"30303","phone":"","province":"","zip":"30303","postalcode":"30303","state_id":"GA","address_id":"300866"}';
+$shipping = '"Shipping":{"name":"190 Marietta St NW","line1":"190 Marietta St NW","line2":"","city":"ATLANTA","state":"GA","county":"","zipcode":"30303","phone":"","province":"","zip":"30303","postalcode":"30303","state_id":"GA"}';
 $billing = '"Billing":{"name":"190 Marietta St NW","line1":"190 Marietta St NW","line2":"","city":"ATLANTA","state":"GA","county":"","zipcode":"30303","phone":"","province":"","zip":"30303","postalcode":"30303","state_id":"GA"}';
 //$cartItem = '"Cart":{"Item":[{"Skuid":"89283","IsAutoShip":"","Quantity":1,"Id":"90","productPack":[21244,21242,21244,22000,22001,22013,22030,22040,89293,76204,70701,70703]}]}';
 //$cartItem = '"Cart":{"Item":[{"Skuid":"89280","IsAutoShip":"","Quantity":1,"Id":"","productPack":[]}]}';
 $cartItem = '"Cart":{"Item":[{"Skuid":"20340","IsAutoShip":"1","Quantity":1,"Id":"","productPack":[]}]}';
-$cartItem = '"Cart":{"Item":[{"Skuid":"89281","IsAutoShip":"","Quantity":1,"Frequency":"","productPack":[],"primaryAppSku":"", "appSku":0},{"Skuid":"89281","IsAutoShip":"1","Quantity":1,"Frequency":"30","productPack":[],"primaryAppSku":"", "appSku":0}]}';
 $cartItem = '"Cart":{"Item":[{"Skuid":"89281","IsAutoShip":"","Quantity":1,"Frequency":"","productPack":[],"primaryAppSku":"10001", "appSku":1}]}';
-$cartItem = '"Cart":{"Item":[{"Skuid":"89281","IsAutoShip":"","Quantity":1,"Frequency":"","productPack":[],"primaryAppSku":"10001", "appSku":1},{"Skuid":"89278","IsAutoShip":"1","Quantity":1,"Frequency":"30","productPack":[],"appSku":1},{"Skuid":"89281","IsAutoShip":"1","Quantity":1,"Frequency":"30","productPack":[],"primaryAppSku":"","appSku":0},{"Skuid":"89113","IsAutoShip":"1","Quantity":1,"Frequency":"30","productPack":[],"primaryAppSku":"", "appSku":0}]}';
-
 $config = array(
 	1 => array(
 		'apiName' => 'Get Category',
@@ -57,7 +54,7 @@ $config = array(
 		'apiName' => 'Preview Order Update',
 		'url' => '/us/en/mobile_order.php',
 		'method' => 'get',//19523289
-		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&shop=C&userid=ZT20376&previewupdate=1&data={"OrderId":"",'.$cartItem.',"IsResale":"","IsShippingOverride":"1","WalletId":"20500427","IsAutoShip":"","DeliveryMethod":"STANDARD","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"90.79","Shipping":{"name":"201 S 4th St","line1":"201 S 4th St","line2":"","city":"San Jose","state":"CA","county":"Santa Clara","zipcode":"95112-3600","phone":"","province":"CA","zip":"95112-3600","postalcode":"95112-3600","state_id":"CA"},"Billing":{"name":"BARNABE  BUTTERS","line1":"22108 CENTER ST","line2":"","city":"CASTRO VALLEY","state":"CA","county":"ALAMEDA","zipcode":"94546-6662","phone":"(925) 734-3636","province":"CA","zip":"94546-6662","postalcode":"94546-6662","state_id":"CA"},"PaymentDetails":{"card_type":"MasterCard","name":"Nameless","card_number":"********1111","expire_month":"7","expire_year":"2019","default":"false"},"PVMonth":"'.date('n').'"}',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&shop=C&userid=ZT20376&previewupdate=1&data={"OrderId":"",'.$cartItem.',"IsResale":"","IsShippingOverride":"1","WalletId":"","IsAutoShip":"","DeliveryMethod":"STANDARD","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"90.79","Shipping":{"name":"201 S 4th St","line1":"201 S 4th St","line2":"","city":"San Jose","state":"CA","county":"Santa Clara","zipcode":"95112-3600","phone":"","province":"CA","zip":"95112-3600","postalcode":"95112-3600","state_id":"CA"},"Billing":{"name":"BARNABE  BUTTERS","line1":"22108 CENTER ST","line2":"","city":"CASTRO VALLEY","state":"CA","county":"ALAMEDA","zipcode":"94546-6662","phone":"(925) 734-3636","province":"CA","zip":"94546-6662","postalcode":"94546-6662","state_id":"CA"},"PaymentDetails":{"card_type":"MasterCard","name":"Nameless","card_number":"********1111","expire_month":"7","expire_year":"2019","default":"false"},"PVMonth":"'.date('n').'"}',
 		'postvalues' => ''
 	),
 	array(
@@ -72,14 +69,14 @@ $config = array(
 		'apiName' => 'Submit Order Sponsor Flow',
 		'url' => '/us/en/mobile_order.php',
 		'method' => 'get',
-		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&shop=N&release=1&data={"OrderId":"6100029830",'.$cartItem.',"IsResale":"","IsShippingOverride":"","WalletId":"20500427","IsAutoShip":"","DeliveryMethod":"","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"21.55",'.$shipping.','.$billing.',"PaymentDetails":{"card_type":"MC","name":"Jhon Doe","card_number":"5442 9811 1111 1114","expire_month":"12","expire_year":"2015","default":"false"},"MemberProfile": {"firstname": "Jhon","lastname": "Doe","spouse_firstname":"Jhon","spouse_lastname":"Doe","line1": "190 Marietta St NW", "line2": "","city": "ATLANTA","state": "GA", "county": "","zipcode": "30303","business_phone": "","postalcode": "30303","email": "preethi_sriram009@yahoo.com","dl_number":"","ssn":"","dl_state":"GA"},"PVMonth":"'.date('n').'"}',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&shop=N&release=1&data={"OrderId":"6100029830",'.$cartItem.',"IsResale":"","IsShippingOverride":"","WalletId":"","IsAutoShip":"","DeliveryMethod":"","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"21.55",'.$shipping.','.$billing.',"PaymentDetails":{"card_type":"MC","name":"Jhon Doe","card_number":"5442 9811 1111 1114","expire_month":"12","expire_year":"2015","default":"false"},"MemberProfile": {"firstname": "Jhon","lastname": "Doe","spouse_firstname":"Jhon","spouse_lastname":"Doe","line1": "190 Marietta St NW", "line2": "","city": "ATLANTA","state": "GA", "county": "","zipcode": "30303","business_phone": "","postalcode": "30303","email": "preethi_sriram009@yahoo.com","dl_number":"","ssn":"","dl_state":"GA"},"PVMonth":"'.date('n').'"}',
 		'postvalues' => ''
 	),
 	array(
 		'apiName' => 'Submit Order',
 		'url' => '/us/en/mobile_order.php',
 		'method' => 'get',//19523289
-		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&release=1&data={"OrderId":"6100029850",'.$cartItem.',"address_id":"1019196", "IsResale":"","IsShippingOverride":"1","WalletId":"20500427","IsAutoShip":"","DeliveryMethod":"STANDARD","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"90.79","Shipping":{"name":"201 S 4th St","line1":"201 S 4th St","line2":"","city":"San Jose","state":"CA","county":"Santa Clara","zipcode":"95112-3600","phone":"","province":"CA","zip":"95112-3600","postalcode":"95112-3600","state_id":"CA"},"Billing":{"name":"BARNABE  BUTTERS","line1":"22108 CENTER ST","line2":"","city":"CASTRO VALLEY","state":"CA","county":"ALAMEDA","zipcode":"94546-6662","phone":"(925) 734-3636","province":"CA","zip":"94546-6662","postalcode":"94546-6662","state_id":"CA","address_id":"300866"},"PaymentDetails":{"card_type":"MasterCard","name":"Nameless","card_number":"4444444444444448","expire_month":"2","expire_year":"2020","default":"false"},"PVMonth":"'.date('n').'"}',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&release=1&data={"OrderId":"6100029850",'.$cartItem.',"IsResale":"","IsShippingOverride":"1","WalletId":"","IsAutoShip":"","DeliveryMethod":"STANDARD","DropShipId":"","SponsorId":"","IsNewMember":"","OrderTotal":"90.79","Shipping":{"name":"201 S 4th St","line1":"201 S 4th St","line2":"","city":"San Jose","state":"CA","county":"Santa Clara","zipcode":"95112-3600","phone":"","province":"CA","zip":"95112-3600","postalcode":"95112-3600","state_id":"CA"},"Billing":{"name":"BARNABE  BUTTERS","line1":"22108 CENTER ST","line2":"","city":"CASTRO VALLEY","state":"CA","county":"ALAMEDA","zipcode":"94546-6662","phone":"(925) 734-3636","province":"CA","zip":"94546-6662","postalcode":"94546-6662","state_id":"CA"},"PaymentDetails":{"card_type":"MasterCard","name":"Nameless","card_number":"4444444444444448","expire_month":"2","expire_year":"2020","default":"false"},"PVMonth":"'.date('n').'"}',
 		'postvalues' => ''
 	), //"Cart":{"Item":[{"Skuid":"20283","IsAutoShip":"","Quantity":1}]}
 	array(
@@ -250,21 +247,20 @@ $config = array(
 		'getvalues' => 'sk_mobile.shakleeid=XG06106&sk_mobile.api_version=1&default=1',
 		'postvalues' => ''
 	),
-    array(
+	array(
 		'apiName' => 'Eprize Winner List',
 		'url' => '/us/en/mobile_eprize.php',
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=28/02/2013',
 		'postvalues' => ''
+	),
+    array(
+		'apiName' => '180 Challenge Start Date',
+		'url' => '/us/en/mobile_start_elig_health_comp.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1',
+		'postvalues' => ''
 	)
-	,
-    array(
-        'apiName' => '180 Challenge Start Date',
-        'url' => '/us/en/mobile_start_elig_health_comp.php',
-        'method' => 'get',
-        'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1',
-        'postvalues' => ''
-    )
 );
 $currentPage = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
 $jsondata = json_encode($config);
@@ -331,7 +327,7 @@ body {
     <td valign="top"><form id="form1" name="form1" method="post" action="" onsubmit="chg(); return true;" target="_blank">
         <p>Url:
           <label for="url2"></label>
-          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com" size="40" />
+          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com:83" size="40" />
         </p>
         <p>Path:
           <label for="path"></label>
