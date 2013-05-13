@@ -260,6 +260,13 @@ $config = array(
 		'method' => 'get',
 		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1',
 		'postvalues' => ''
+	),
+    array(
+		'apiName' => '45 Day 180 Warning Message',
+		'url' => '/us/en/mobile_start_elig_health_comp.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&day45=1',
+		'postvalues' => ''
 	)
 );
 $currentPage = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
