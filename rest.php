@@ -251,7 +251,7 @@ $config = array(
 		'apiName' => 'Eprize Winner List',
 		'url' => '/us/en/mobile_eprize.php',
 		'method' => 'get',
-		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=28/02/2013',
+		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=2013-03-14',
 		'postvalues' => ''
 	),
     array(
