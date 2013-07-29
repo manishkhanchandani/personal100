@@ -251,21 +251,28 @@ $config = array(
 		'apiName' => 'Eprize Winner List',
 		'url' => '/us/en/mobile_eprize.php',
 		'method' => 'get',
-		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1&date=2013-03-14',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&default=1&date=2013-03-14',
 		'postvalues' => ''
 	),
     array(
 		'apiName' => '180 Challenge Start Date',
 		'url' => '/us/en/mobile_start_elig_health_comp.php',
 		'method' => 'get',
-		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&default=1',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&default=1',
 		'postvalues' => ''
 	),
     array(
 		'apiName' => '45 Day 180 Warning Message',
 		'url' => '/us/en/mobile_start_elig_health_comp.php',
 		'method' => 'get',
-		'getvalues' => 'sk_mobile.shakleeid=BQ50228&sk_mobile.api_version=1&day45=1',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&day45=1',
+		'postvalues' => ''
+	),
+    array(
+		'apiName' => 'Mobile Navigation',
+		'url' => '/us/en/mobile_page.php',
+		'method' => 'get',
+		'getvalues' => 'sk_mobile.shakleeid='.$shakleeId.'&sk_mobile.api_version=1&nav=1',
 		'postvalues' => ''
 	)
 );
@@ -334,7 +341,7 @@ body {
     <td valign="top"><form id="form1" name="form1" method="post" action="" onsubmit="chg(); return true;" target="_blank">
         <p>Url:
           <label for="url2"></label>
-          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com:83" size="40" />
+          <input name="url" type="text" id="url" value="http://mobile.local.shaklee.com" size="40" />
         </p>
         <p>Path:
           <label for="path"></label>
